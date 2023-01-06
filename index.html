@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD</title>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <td>name</td>
+                    <td>surname</td>
+                    <td>address</td>
+                </tr>
+            </thead>
+        </table>
+        <style>
+
+        </style>
+        <script>
+            const form =  document.createElement('form')
+            form.setAttribute("id","myform")
+            const body = document.querySelector("body")
+            let input = document.createElement("input")
+            let input2 = document.createElement("input")
+            let input3 = document.createElement("input")
+
+            var appndform =body.appendChild(form)
+            appndform.appendChild(input).placeholder = "enter your name" 
+            appndform.appendChild(input2).placeholder = "enter your surname"
+            appndform.appendChild(input3).placeholder = "enter address"
+            
+            let btn = document.createElement("button")
+            body.appendChild(form).appendChild(btn)
+            btn.setAttribute("id","mybtn")
+            document.getElementById("mybtn").value = "button";
+            btn.innerHTML = "submit"
+            
+            const hr = document.createElement("hr")
+            
+            body.appendChild(hr)
+
+            const table = document.createElement('table')
+            table.setAttribute("id","mytable")
+            body.appendChild(table) 
+            table.style.border ="1px solid black"
+            //table.style.borderWidth = "1px solidblack"
+            
+            //myTable.style.border="1px solid red";
+            //row1.style.border = "1px solid black"
+            //table.appendChild(row1);
+            
+            var row1 = table.insertRow(0)
+            row1.style.border = "1px solid black"
+            
+            let cell1 = row1.insertCell(0)
+            let cell2 = row1.insertCell(1)
+            let cell3 = row1.insertCell(2)
+            
+            cell1.innerHTML="pushpendra";
+            cell2.innerHTML ="thorecha";
+            cell3.innerHTML ="neemuch";
+
+           var btnclick = document.getElementById("mybtn")
+                function myfunction(e){
+                    //e.preventdefault();
+                    alert('ok')
+                    return false;
+                    //console.log('ok')
+                }
+                btnclick.onclick = myfunction();
+           
+        
+        </script>
+    </body>
+</html>
