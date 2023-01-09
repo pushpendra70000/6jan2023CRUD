@@ -84,7 +84,7 @@
            var btnclick = document.getElementById("mybtn")
                 function func(e){
                         
-                        var row1 = table1.insertRow(rowcount)
+                        var row1 = table1.insertRow(0)
                         let cell1 = row1.insertCell(0)
                         let cell2 = row1.insertCell(1)
                         let cell3 = row1.insertCell(2)
@@ -109,7 +109,7 @@
                         btn4.innerHTML = "update"
                         btn4.setAttribute("id","myupdate")
                         btn4.setAttribute("type","button")
-                        btn4.setAttribute("onclick","upd()")
+                        btn4.setAttribute("onclick","upd(this)")
 
                         let cell6 = row1.insertCell(5)
                         let btn5 = document.createElement("button")
@@ -123,19 +123,36 @@
                     z.closest('tr').remove();
                     console.log(z.closest('tr'))
                 }
-                function upd(){
-                    cell1.innerHTML=prompt("enter your name")
-                    prompt("enter your surname")
-                    prompt("enter your address")
+                 function upd(elem){
+                     var tt = prompt("enter your name");
+                     //console.log(tt)
+                    if(tt != ''){
+                        //console.log("okk")
+                        let a =document.querySelector("#mytable tbody:first-child").children[0];
+                        let b = document.createTextNode(tt)
+                        a.replaceChild(b, a.childNodes[0]);
+                        a.replaceChild(a)= tt;
+                        //a.append(tt);
+                        //console.log(a)
+
+                        //document.querySelector("mytable tbody tr first-child").innerHTML =b
+                        //console.log(b)
+                    }else{
+                        alert("enter name")
+                        //return prompt("enter your name")
+                    }
+                    
+                    //prompt("enter your surname")
+                    //prompt("enter your address")
                 }
-                function read(){
+                 function read(){
                     let rd= document.querySelector("#fname")
                     let rd2= document.querySelector("#fsname")
                     let rd3= document.querySelector("#faddr")
                     rd.innerHTML = input.value
                     rd2.innerHTML = input2.value
                     rd3.innerHTML = input3.value
-                }   
+                }  
         </script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
